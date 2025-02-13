@@ -119,35 +119,20 @@ body, html {
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="app">
+        <div class="app" id="app">
             <header>
                 <h1>AirVisual</h1>
-                <input type="search" placeholder="Search city...">
+                <form action="/action/search" target="_blank">
+                  <input type="search" id="keyword" name="keyword" placeholder="Search city">
+                </form>
             </header>
             
             <section class="main-info">
-                <h2>Shanghai, China</h2>
-                <p class="aqi-level">AQI: <span class="aqi-value">162</span> (Unhealthy)</p>
-                <p class="temperature">Temp: 26°C</p>
-                <p class="wind-speed">Wind: 4.5 km/h</p>
-            </section>
-    
-            <section class="forecast">
-                <h3>Weekly Forecast</h3>
-                <div class="forecast-grid">
-                    <div class="day">
-                        <p>Monday</p>
-                        <p class="aqi">AQI: 120</p>
-                    </div>
-                    <div class="day">
-                        <p>Tuesday</p>
-                        <p class="aqi">AQI: 135</p>
-                    </div>
-                    <div class="day">
-                        <p>Wednesday</p>
-                        <p class="aqi">AQI: 80</p>
-                    </div>
-                </div>
+                <h2>{{cityName}}, {{country}}</h2>
+                <p class="aqi-level">AQI: {{aqi}} ({{aqi_status}})</p>
+                <p class="temperature">Temp: {{temp}}°C</p>
+                <p class="humidity">Humidity: {{humidity}}%</p>
+                <p class="wind-speed">Wind: {{wind_speed}} km/h</p>
             </section>
         </div>
     </body>
@@ -284,7 +269,7 @@ body, html {
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
       </div>
       <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="/action_page.php" target="_blank">
+      <form action="/action/sendmessage" target="_blank">
         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
           <div class="w3-half">
             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
